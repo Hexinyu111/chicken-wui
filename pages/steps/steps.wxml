@@ -1,0 +1,23 @@
+<view class='martop'>
+  <scroll-view scroll-y style='height:{{windoeheight}}px'>
+
+    <view class='info_box' wx:for="{{obj}}" wx:for-index="key">
+      <view class='time'>{{key}}</view>
+
+      <view class='box' wx:for="{{item}}">
+        <view>
+          <view class='dot' style='background:{{item.bg}}'></view>
+          <view class='time2'>{{item.number}}</view>
+          <view class='titleinfo'>
+            <view class='hello'>{{item.url}}</view>
+            <view class='getfeed'>{{item.num}}</view>
+          </view>
+        </view>
+        <image src='{{item.image}}' class='icon'></image>
+      </view>
+    </view>
+    <view style="height:40rpx"></view>
+  </scroll-view>
+
+
+</view>

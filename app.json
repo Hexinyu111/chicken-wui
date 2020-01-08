@@ -1,0 +1,57 @@
+{
+  "pages": [
+     
+    "pages/index/index",
+    "pages/order_detail/order_detail",
+    "pages/order/order",
+    "pages/address_info/address_info",
+    "pages/my_eggs/my_eggs",
+    "pages/personal/personal",
+    "pages/question/question",
+    "pages/video/video",
+    "pages/movie_detail/movie_detail",
+    "pages/activity/activity",
+    "pages/code/code",
+    "pages/steps/steps",
+      "pages/cooperation/cor",
+    "pages/cor_set/cor_set"
+
+
+  ],
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#0D4F21",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_4.png",
+        "selectedIconPath": "images/tab_1.png",
+        "text": "在线养鸡"
+      },
+   
+      {
+        "pagePath": "pages/question/question",
+        "iconPath": "images/tab_5.png",
+        "selectedIconPath": "images/tab_2.png",
+        "text": "常见问题"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "images/tab_6.png",
+        "selectedIconPath": "images/tab_3.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "navigateToMiniProgramAppIdList": [
+    "wx4b994377cd5590d1"
+  ],
+  "sitemapLocation": "sitemap1.json"
+}

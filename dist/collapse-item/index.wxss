@@ -1,0 +1,38 @@
+.i-collapse-item {
+  padding: 26rpx 40rpx 26rpx 40rpx;
+  border-bottom: 2rpx solid #F0F0F0;
+}
+
+.i-collapse-item-title {
+  vertical-align: middle;
+}
+
+
+.i-collapse-item-content {
+  padding-top: 20rpx;
+  display: none;
+  line-height: 44rpx;
+}
+
+.i-collapse-item-show-content {
+  display: block;
+}
+
+.i-collapse-item-arrow {
+  transition: transform 0.2s ease-in-out;
+  float: right;
+  color: #DDDDDD;
+
+}
+
+.i-collapse-item-arrow-show {
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(90deg);
+  float: right;
+color: #dddddd;
+
+}
+.i-collapse-item-title{
+  color:#666666;
+  font-size: 28rpx
+}

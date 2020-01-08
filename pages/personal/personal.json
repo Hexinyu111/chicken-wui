@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "个人中心",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-cell": "../../dist/cell/index",
+    "i-action-sheet": "../../dist/action-sheet/index"
+  }
+}

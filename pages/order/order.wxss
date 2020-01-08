@@ -1,0 +1,44 @@
+.goodslist{
+  height: 160rpx;
+  background: #fff;
+  display: flex;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.goodslist image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+.fontcolor{
+    color: #000000;
+    padding-bottom: 40rpx;
+}
+.wid{
+  width: 80%;
+}
+.wid view{
+  display: flex;
+  justify-content: space-between;
+}
+.lastview{
+  color: #999999;
+}
+.yellow{
+  color: #ED8900;
+  font-weight: bolder
+}
+.green{
+  color: #119535;
+   font-weight: bolder
+}
+
+.none{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: center;
+  margin-top: 50%;
+}

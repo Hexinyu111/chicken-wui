@@ -1,0 +1,412 @@
+page {
+  background: #431b55;
+  text-align: center;
+}
+
+.one {
+  width: 100%;
+  height: 700rpx;
+}
+
+/* .back_box{
+  height: 40rpx;
+  line-height: 40rpx;
+} */
+
+.back {
+  width: 40px;
+  height: 30px;
+  position: fixed;
+  /* top: 60rpx; */
+  left: 20rpx;
+}
+
+.sanjiaoxing {
+  animation: hongbao 0.5s infinite linear alternate;
+  width: 132rpx;
+  height: 44rpx;
+  line-height: 40rpx;
+  font-size: 20rpx;
+  border-radius: 8rpx;
+  color: rgba(255, 34, 42, 1);
+  font-weight: 600;
+  background: rgba(255, 222, 110, 1);
+  position: relative;
+  left: 500rpx;
+  bottom: 30rpx;
+}
+
+.sanjiaoxing>view {
+  width: 0;
+  height: 0;
+  border: 14rpx solid;
+  border-color: rgba(255, 222, 110, 1) transparent transparent;
+  position: absolute;
+  bottom: -23rpx;
+  right: 30rpx;
+}
+
+.remain {
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+@keyframes hongbao {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.two {
+  animation: hongbao2 0.5s infinite linear alternate;
+  width: 672rpx;
+  height: 140rpx;
+  margin-top: 10rpx;
+}
+
+@keyframes hongbao2 {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.three {
+  width: 381rpx;
+  height: 44rpx;
+}
+
+.three2 {
+  width: 100%;
+  height: 386rpx;
+}
+
+.three3 {
+  width: 536rpx;
+  height: 78rpx;
+  position: relative;
+  top: 77rpx;
+}
+
+.box {
+  margin: 0 25rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding-top: 124rpx;
+  box-sizing: border-box;
+  margin-bottom: 36rpx;
+  padding-bottom: 16rpx;
+  border: 2rpx solid #fff;
+}
+
+.top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.top>view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top>view text:first-child {
+  color: #431855;
+  font-size: 68rpx;
+}
+
+.top>view text:last-child {
+  color: #431855;
+  font-size: 24rpx;
+}
+
+.top>view:last-child text:first-child {
+  color: #ff2a35;
+  font-weight: bold;
+}
+
+.center2 {
+  height: 4rpx;
+  background: rgba(67, 24, 85, 0.1);
+  margin: 34rpx 40rpx 0;
+}
+
+.btns {
+  display: flex;
+  padding: 40rpx 48rpx;
+}
+
+.bg1 {
+  background: transparent !important;
+  position: relative;
+  right: 10rpx;
+}
+
+#bg2 {
+  background-color: linear-gradient(bottom, rgba(255, 224, 115, 1), rgba(255, 133, 0, 1)) !important;
+}
+
+.getmoney {
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: red;
+  background-image: linear-gradient(to bottom, #ff5733, #d30050);
+  border: 2rpx solid #431855;
+  color: #431855;
+  font-size: 32rpx;
+  border-radius: 58rpx;
+}
+
+.inner_width {
+  width: 750rpx !important;
+}
+
+button::after {
+  content: none !important;
+}
+
+.mar {
+  margin: 24rpx 0;
+  color: #431855;
+  opacity: 0.4;
+  font-size: 24rpx;
+}
+
+.share_hongbao222 {
+  width: 664rpx;
+  height: 200rpx;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* .share_hongbao222::after {
+  position: none;
+} */
+
+.share_hongbao {
+  width: 410rpx;
+  height: 132rpx;
+}
+
+.button-hover {
+  color: #431855;
+  background-color: transparent;
+}
+
+.shequn .van-popup {
+  border-radius: 20rpx;
+}
+
+.shequn_box {
+  width: 100%;
+  height: 100%;
+  padding: 46rpx 96rpx 50rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.shequn_box >view:first-child {
+  margin: 0 auto;
+  width: 368rpx;
+  color: rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+  line-height: 40rpx;
+}
+
+.aaaa {
+  color: rgba(255, 146, 13, 1);
+}
+
+.shequn_box image {
+  width: 312rpx;
+  height: 312rpx;
+}
+
+.shequn_box .bbbb {
+  width: 360rpx;
+  height: 68rpx;
+  color: rgba(140, 52, 0, 1);
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 68rpx;
+  border-radius: 68rpx;
+  background-image: linear-gradient(to bottom, rgba(255, 224, 115, 1), rgba(255, 133, 0, 1));
+  box-shadow: 0 10rpx 20rpx rgba(203, 124, 26, 0.5);
+  margin-top: 20rpx;
+}
+
+.invi_record {
+  margin-bottom: 65rpx;
+}
+
+.record_list {
+  height: 100%;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 8rpx 26rpx 0;
+  border: 2rpx solid #fff;
+  padding-top: 85rpx;
+}
+
+.invi_record>image {
+  width: 536rpx;
+  height: 78rpx;
+  position: relative;
+  top: 84rpx;
+}
+
+.record_list image {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 100rpx;
+}
+
+.ac_aaa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 0 40rpx;
+  border-bottom: 2rpx solid rgba(78, 0, 225, 0.1);
+  color: #431855;
+}
+
+.center_nickname {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  right: 18rpx;
+}
+
+.center_nickname text:first-child {
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.lasttext {
+  font-size: 20rpx !important;
+}
+
+.fontsize {
+  font-size: 24rpx;
+  width: 220rpx;
+  text-align: left;
+}
+
+.thisheight {
+  height: 680rpx;
+}
+
+.height {
+  color: rgba(67, 24, 85, 0.7);
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+/* .width2 {
+  height: 520rpx;
+  line-height: 720rpx;
+} */
+
+.no_record {
+  width: 440rpx !important;
+  height: 230rpx !important;
+}
+
+/* 
+.width2 image {
+  border-radius: 0 !important;
+} */
+
+.active_hongbao {
+  width: 602rpx;
+  height: 590rpx;
+}
+
+.enterhongbao {
+  position: relative;
+}
+
+.closesize {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  top: -18rpx;
+}
+
+.enterhongbao .van-popup {
+  background: none !important;
+}
+
+.aaa {
+  position: absolute;
+  top: 48rpx;
+  left: 125rpx;
+  font-size: 36rpx;
+  color: rgba(224, 2, 18, 1);
+  font-weight: 600;
+}
+
+.active_btn {
+  width: 100%;
+  height: 100%;
+  /* position: absolute;
+  bottom: 70rpx;
+  left: 94rpx; */
+}
+
+.share_hongbao {
+  width: 410rpx;
+  height: 132rpx;
+  position: absolute;
+  bottom: 70rpx;
+  left: 98rpx;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.padtop {
+  padding-top: 46rpx;
+}
+
+.share_hongbao::after {
+  position: static;
+}
+
+.moneyall {
+  width: 300rpx;
+  color: rgba(224, 2, 18, 1);
+  text-align: right;
+  position: absolute;
+  top: 90px;
+  left: 145rpx;
+}
+
+.moneyall text:first-child {
+  display: inline-block;
+  width: 211rpx;
+  color: rgba(224, 2, 18, 1);
+  text-align: right;
+  font-size: 88rpx;
+  font-weight: 600;
+  margin-right: 36rpx;
+}
+
+.enterhongbao .van-overlay {
+  background-color: var(--overlay-background-color, rgba(0, 0, 0, 0.7)) !important;
+}

@@ -1,0 +1,32 @@
+<!--pages/my_eggs/my_egg.wxml-->
+<view class='collapse mar20'>
+  <view class='pagetitle'>收货信息</view>
+  <navigator url='../address_info/address_info'>
+    <view>
+      <i-cell-group>
+        <i-cell is-link>
+          <text class='address'>请填写地址</text>
+          <text class='posi'>{{userName}}  {{phone}}</text>
+        </i-cell>
+      </i-cell-group>
+    </view>
+  </navigator>
+
+
+  <view class='pagetitle martop'>订单信息</view>
+
+  <view class='list'>
+    <text>鸡蛋总数</text>
+    <text class='fontcolor'>{{userAgg}}</text>
+  </view>
+  <view class='list'>
+    <text>兑换鸡蛋</text>
+    <!-- <text class='fontcolor'>请填写需要兑换的鸡蛋数量</text> -->
+    <input class='textalign' placeholder="请填写要兑换的鸡蛋数" type="number" bindinput="bindKeyInput" />
+  </view>
+  <i-button type="primary" size="large" bindtap="sendOrder">提交订单</i-button>
+  <view class='ad'>
+    <ad unit-id="adunit-d1b78eac157aa645"></ad>
+  </view>
+ 
+</view>

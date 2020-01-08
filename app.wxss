@@ -1,0 +1,14 @@
+@import "dist2/common/index.wxss";
+
+page{
+  background: #F0F0F0;
+  font-size: 28rpx;
+}
+.mar20{
+  margin-top: 20rpx;
+}
+
+
+.ad{
+  padding: 20rpx;
+}

@@ -1,0 +1,29 @@
+<!--pages/address_info/address_info.wxml-->
+<view class='container mar20'>
+
+  <view class='list'>
+    <text>联系姓名</text>
+    <input class='textalign' value="{{userName}}" bindinput="getName" placeholder="请填写" />
+  </view>
+  <view class='list'>
+    <text>联系电话</text>
+    <input class='textalign' value="{{phone}}" bindinput="getPhone" maxlength="11" placeholder="请填写" type="number" />
+  </view>
+  <view class="section">
+    <view class="section__title">所在地区</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class='list'>
+    <text>详细地址</text>
+    <input class='textalign' value="{{address}}" placeholder="请填写" bindinput="getAddress" />
+  </view>
+  <i-button type="primary" size="large" bindtap="saveAddress">保存</i-button>
+  <view class='ad'>
+    <ad unit-id="adunit-32d1c5b16c5722f1"></ad>
+  </view>
+
+</view>

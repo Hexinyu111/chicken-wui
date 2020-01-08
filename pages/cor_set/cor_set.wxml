@@ -1,0 +1,29 @@
+<!--pages/cor_set/cor_set.wxml-->
+<view class='rember'>合养成员</view>
+<view class='record_list'>
+  <scroll-view scroll-y class='thisheight'>
+
+
+      <view class='ac_aaa padtop' >
+      <image src='{{creatCorImg2}}'></image>
+      <view class='center_nickname'>
+        <text>{{nickname}}</text>
+        <text class='lasttext'>已喂养：{{putfeed>999?putfeed/1000+'kg':putfeed+'g'}}</text>
+      </view>
+    </view>
+    <view class='ac_aaa padtop' wx:for="{{corLists}}" wx:key="index">
+      <image src='{{item.headrImg}}'></image>
+      <view class='center_nickname'>
+        <text>{{item.nikeName}}</text>
+        <text class='lasttext'>已喂养：{{item.putFeed>999?item.putFeed/1000+'kg':item.putFeed+'g'}}</text>
+      </view>
+      <image src='../../images/dele.png' bindtap="outCoorapotion" data-id='{{item.userId}}' wx:if='{{isCreateCor}}' class='deleposi'></image>
+    </view>
+  </scroll-view>
+
+
+</view>
+<view class='out' bindtap="outCoorapotion2">退出合养</view>
+<view class='ad'>
+  <ad unit-id="adunit-50fd0c240726573c"></ad>
+</view>

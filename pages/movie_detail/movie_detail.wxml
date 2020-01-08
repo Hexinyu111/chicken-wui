@@ -1,0 +1,13 @@
+<view wx:if='{{showmovie==1}}'>
+  <view class='back_box'>
+    <image src='../../images/ac_return.png' class='back' bindtap="back" style="top:{{navTop}}px;"></image>
+  </view>
+  <view style="height:{{navTop}}px;background:#000"></view>
+  <video src="{{video}}" autoplay style="height:{{windoeheight-navTop}}px"></video>
+  <view class='btn'>
+    <button type='primary' open-type="share" onShareAppMessage='onShareAppMessage'>
+      <image src="../../images/shareicon.png"></image>分享给好友</button>
+    <button type='warn' open-type="share" onShareAppMessage='onShareAppMessage'>
+      <image src="../../images/shareicon.png"></image>分享到群</button>
+  </view>
+</view>

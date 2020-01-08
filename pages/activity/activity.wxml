@@ -1,0 +1,118 @@
+<!--pages/activity/activity.wxml-->
+<view class='back_box' style="height:{{statusBarHeight}}px;">
+  <image src='../../images/ac_return.png' class='back' bindtap="back" style="top:{{navTop}}px;"></image>
+  <view>
+  </view>
+
+  <image src="../../images/ac_1.png" class='one'></image>
+
+  <button open-type="share" class='share_hongbao222'>
+    <image src="../../images/button_1.png" class='two' bindtap='onShareAppMessage'></image>
+  </button>
+
+
+
+  <image src="../../images/sanbu.png" class='three'></image>
+  <image src="../../images/sanbu2.png" class='three2'></image>
+  <image src="../../images/invite.png" class='three3'></image>
+  <view class='box'>
+    <view class='top'>
+      <view>
+        <text>{{invite}}</text>
+        <text>共邀请好友</text>
+      </view>
+      <view>
+        <text>{{ranking}}</text>
+        <text>战绩排名</text>
+      </view>
+      <view>
+        <text>{{money}}</text>
+        <text>我的奖励(元)</text>
+      </view>
+
+    </view>
+    <!-- <view class='center1'></view> -->
+    <view class='center2'></view>
+    <view class='remain'>
+      <view class='sanjiaoxing'>
+        <view></view>
+        <text>仅差{{need_money}}元</text>
+      </view>
+      <i-progress percent="{{ money}}" status="{{ status }}"></i-progress>
+    </view>
+    <view class='btns'>
+      <button bindtap="getMoney" class='getmoney bg1'>立即提现</button>
+      <button class='getmoney' style="color:#fff;font-weight:700;border:none;" open-type="share" onShareAppMessage='onShareAppMessage'>邀请好友</button>
+    </view>
+
+    <view class='mar'>*奖励达100元即可提现，赶紧邀请更多新用户吧</view>
+  </view>
+  <!-- 提现添加客服的弹框 -->
+  <view class='shequn'>
+    <van-popup show="{{ show }}" bind:close="close">
+      <view class='shequn_box'>
+        <view>添加客服微信 获取活动奖励，赶紧添加领红包吧 </view>
+        <image src='../../images/erweima.png'></image>
+        <view class='aaaa'>扫码/复制 客服微信号</view>
+        <view class='bbbb' bindtap="copy">点击复制 gugu_kefu</view>
+      </view>
+    </van-popup>
+  </view>
+  <!-- 进入页面弹红包 -->
+  <view class='enterhongbao'>
+    <van-popup show="{{ active_hongbao }}" bind:close="onClose">
+      <view class='aaa'>恭喜您获得{{moneyall}}元现金</view>
+      <image src='../../images/active_hongbao.png' class='active_hongbao'></image>
+      <image src='../../images/close_icon.png' class='closesize' bindtap="closehongbao"></image>
+      <button open-type="share" class='share_hongbao'>
+        <image src='../../images/aaabtn.png' class='active_btn'></image>
+      </button>
+      <view class='moneyall'>
+        <text>{{money}}</text>
+        <text>元</text>
+      </view>
+
+    </van-popup>
+
+  </view>
+
+
+  <view class='invi_record'>
+    <image src='../../images/invi_record.png'></image>
+    <view class='record_list'>
+      <scroll-view scroll-y class='thisheight'>
+        <view class='ac_aaa padtop'>
+          <image src='{{ avatarUrl }}'></image>
+          <view class='center_nickname'>
+            <text>{{nickname}}</text>
+            <text class='lasttext'>天天拆红包，领微信零钱</text>
+          </view>
+          <view class='fontsize'>拆红包获得{{firstPrize}}元</view>
+        </view>
+
+        <view wx:for="{{recordlist}}" wx:key='index' class='ac_aaa'>
+          <image src='{{item.headrImg}}'></image>
+          <view class='center_nickname'>
+            <text>{{item.nikeName}}</text>
+            <text class='lasttext'>天天拆红包，领微信零钱</text>
+          </view>
+          <view class='fontsize'>帮你获得{{item.money}}元</view>
+        </view>
+
+        <view class='ac_aaa height'>
+
+          暂无更多邀请记录，快去邀请好友吧~
+        </view>
+
+      </scroll-view>
+
+    </view>
+
+    <view style="height:100rpx"></view>
+
+  </view>
+
+
+
+
+</view>

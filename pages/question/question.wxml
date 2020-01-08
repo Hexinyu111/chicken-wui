@@ -1,0 +1,14 @@
+<view class="caption-wrap">
+  <view class='collapse mar20'>
+    <van-collapse value="{{ activeNames }}" bind:change="onChange" accordion="true">
+      <view wx:for="{{questions}}" wx:for-key="{{index}}">
+        <van-collapse-item title="{{item.titel}}"  name="{{index}}">
+        {{item.content}}
+        </van-collapse-item>
+      </view>
+    </van-collapse>
+  </view>
+</view>
+<view class='ad'>
+<ad unit-id="adunit-f60e947e7656bdef"></ad>
+</view>

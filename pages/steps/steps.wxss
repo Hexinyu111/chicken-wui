@@ -1,0 +1,70 @@
+/* pages/steps/steps.wxss */
+
+/* .martop{
+  margin-top: 50rpx;
+} */
+
+.time {
+  color: rgba(102, 102, 102, 1);
+  background: rgba(240, 240, 240, 1);
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+}
+
+.info_box {
+  /* padding-left: 30rpx; */
+}
+
+.box {
+  background: #fff;
+  padding-left: 30rpx;
+  padding-right: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.dot{
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 40rpx;
+  background: #ccc;
+  position: absolute;
+  top: 45%;
+  left: 122rpx;
+}
+.box>view:first-child {
+  display: flex;
+  align-items: center;
+   position: relative;
+}
+
+.time2 {
+  width: 114rpx;
+  text-align: center;
+  height: 151rpx;
+  line-height: 151rpx;
+  padding-right: 18rpx;
+  border-right: 2rpx solid #F0F0F0;
+  color: #999999;
+
+}
+.titleinfo{
+  padding-left: 50rpx;
+}
+
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+.hello{
+  color: #000;
+  font-weight: 600;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.getfeed{
+  color: rgba(153, 153, 153, 1);
+  font-size: 24rpx;
+}

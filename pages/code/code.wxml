@@ -1,0 +1,14 @@
+<!--pages/code/code.wxml-->
+
+<view class='box'>
+  <view>
+    <view class='codetitle'>我的邀请码</view>
+    <view class='title2'>邀请好友使用微信扫一扫</view>
+  </view>
+
+  <image src='{{ewmUrl}}'></image>
+
+  <view class='aa'>通过此码邀请的好友，也可获得相应的粮食与红包奖励</view>
+
+
+</view>

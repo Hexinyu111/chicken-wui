@@ -1,0 +1,55 @@
+/* pages/movie_detail/movie_detail.wxss */
+page{
+  width: 100%;
+height: 100%;
+}
+video{
+  width: 100%;
+/* height: 1048rpx!important; */
+}
+.btn{
+  width: 100%;
+  height:80px;
+  line-height: 80px;
+  position: fixed;
+  bottom: 0;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn button{
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+   font-weight: 600;
+}
+.btn image{
+   animation: hongbao 0.8s infinite linear alternate;
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+ 
+}
+.back {
+  width: 40px;
+  height: 30px;
+  position: fixed;
+  left: 20rpx;
+  z-index: 999999999;
+}
+
+
+@keyframes hongbao {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.7);
+  }
+}

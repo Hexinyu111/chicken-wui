@@ -1,0 +1,34 @@
+<view class="collapse mar20">
+  <view class="top">
+    <view wx:if="{{showNickname}}">
+      <image src='../../images/avatar.png' class='avatar'></image>
+        <button class='btn'  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">授权登录</button>
+    </view>
+    <view wx:else>
+    <view class='imagename'>
+     <image src='{{avatarUrl}}'  class='avatar'></image>
+      <text class='userNickname'>{{nickname}}</text>
+    </view>
+    <navigator url='../code/code' style='height:80rpx'><image src='../../images/small_ewm.png' class='erweima'></image></navigator>
+    
+    </view>
+
+  </view>
+
+  <view class='list'>
+    <i-cell-group>
+      <navigator url="../my_eggs/my_eggs">
+        <i-cell title="我的鸡蛋" is-link></i-cell>
+      </navigator>
+      <navigator url="../order/order">
+        <i-cell title="我的订单" is-link></i-cell>
+          </navigator>
+    </i-cell-group>
+  
+  </view>
+  <view class='ad'>
+   <ad unit-id="adunit-ddc4f631fe96a945"></ad>
+  </view>
+ <!-- <view class='version'>当前版本:v1.1.1</view> -->
+
+</view>

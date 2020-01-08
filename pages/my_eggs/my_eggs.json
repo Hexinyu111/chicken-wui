@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "兑换鸡蛋",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "i-cell": "../../dist/cell/index",
+    "i-action-sheet": "../../dist/action-sheet/index",
+    "i-button": "../../dist/button/index"
+  }
+ 
+}

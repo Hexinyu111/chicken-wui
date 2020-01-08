@@ -1,0 +1,25 @@
+<view class='mar20'>
+  <view wx:if='{{isShow}}'>
+    <view wx:for="{{orderlist}}" wx:for-key='{{index}}'>
+      <navigator url="../order_detail/order_detail?uuid={{item.uuid}}">
+        <view class='goodslist'>
+          <image src='../../images/goods.png'></image>
+          <view class='wid'>
+            <view class='fontcolor'>
+              <text>正大（CP) 出口级 鲜鸡蛋…</text>
+              <text class="{{item.status=='待发货'?'yellow':'green'}}">{{item.status}}</text>
+            </view>
+            <view class='lastview'>
+              <text>x {{item.number}}</text>
+              <text></text>{{item.orderTime}}</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+  <view wx:else class="none">
+    暂无订单数据
+  </view>
+
+</view>

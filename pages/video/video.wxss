@@ -1,0 +1,56 @@
+/* page{
+  background: rgba(0, 0, 0, 0.8);
+  opacity: .5
+} */
+
+video{
+  width: 100%;
+}
+.timecut{
+  width:200rpx;
+  height: 60rpx;
+  color: #fff;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 20rox;
+  /* background: #999; */
+  border-radius: 10rpx
+}
+.van-count-down{
+  font-size: 30rpx!important;
+}
+.video_box{
+  width: 100%;
+ 
+}
+.video_box image{
+    width: 100%;
+}
+.aa{
+   width: 100%;
+ position: relative;
+  margin-bottom: 20rpx;
+}
+.aa .video_title{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+ background: rgba(0, 0, 0, 0.5); 
+ color: #fff;
+ /* text-align: center; */
+ opacity: .7;
+ padding-left: 14rpx;
+ overflow:hidden;
+ position: absolute;
+ bottom: 10rpx;
+ box-sizing: border-box;
+}
+
+.posi{
+  padding: 20rpx 30rpx;
+  color: #999;
+  letter-spacing: 4rpx;
+  line-height: 50rpx;
+  text-indent: 2rem;
+}

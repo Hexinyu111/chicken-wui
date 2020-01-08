@@ -1,0 +1,9 @@
+/* pages/question/question.wxss */
+
+.collapse{
+   background: #fff;
+}
+.item_content{
+  color: #000000;
+  
+}

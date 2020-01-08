@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "合养设置",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "light",
+  "usingComponents": {}
+}

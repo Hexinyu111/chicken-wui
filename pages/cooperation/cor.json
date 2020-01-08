@@ -1,0 +1,23 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "在线养鸡",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "light",
+  "disableScroll": true,
+  "enablePullDownRefresh":true,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "i-progress": "../../dist/progress/index",
+    "van-count-down": "../../dist2/count-down/index",
+    "van-popup": "../../dist2/popup/index",
+    "van-dialog": "../../dist2/dialog/index",
+    "van-button": "../../dist2/button/index",
+    "van-transition": "../../dist2/transition/index",
+    "van-tag": "../../dist2/tag/index",
+    "i-modal": "../../dist/modal/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index"
+  }
+ 
+}

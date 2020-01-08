@@ -1,0 +1,386 @@
+<!--index.wxml-->
+<!-- <import src="../template/tabbar.wxml" /> -->
+
+<view class="container">
+
+  <van-notify id="van-notify" />
+  <van-toast id="van-toast" />
+  <!-- 红包弹出层 -->
+  <view class='hongbao_box'>
+    <van-popup show="{{ showhognbao }}" bind:close="showHongbao">
+      <view class='hongbaobox'>
+        <image src='../../images/hongbaore.png' class='hongbaosize'></image>
+        <view class='number'>
+          <text class='hongbaonum'>{{money}}</text>
+          <text class="yuan"> 元</text>
+        </view>
+        <navigator url='../activity/activity' hover-class="none">
+          <image src="../../images/hongbao_btn.png" class='hongbao_btn'></image>
+        </navigator>
+        <image src='../../images/close_icon.png' class='closesize' bindtap="closehongbao"></image>
+      </view>
+    </van-popup>
+  </view>
+  <!-- 新用户进来弹出拆红包 -->
+  <view class='hongbao_box'>
+    <van-popup show="{{ hongbao2 }}" bind:close="onClose10" close-on-click-overlay='{{false}}'>
+      <view class='hongbaobox'>
+        <button class='hongbao_btn2' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo3">
+          <image src='../../images/chaihongbao2.png' class='hongbaosize2'></image>
+        </button>
+      </view>
+    </van-popup>
+  </view>
+  <!-- 老用户进来拆红包 -->
+  <view class='hongbao_box'>
+    <van-popup show="{{ hongbao_older }}" bind:close="onClose12" close-on-click-overlay='{{false}}'>
+      <view class='hongbaobox'>
+        <button class='hongbao_btn2'>
+          <image src='../../images/chaihongbao2.png' class='hongbaosize2' bindtap="gethongbao"></image>
+        </button>
+      </view>
+    </van-popup>
+  </view>
+
+  <!-- 云 -->
+  <image src='../../images/dongyun.png' class='dongyun1'></image>
+  <image src='../../images/dongyun.png' class='dongyun2'></image>
+  <image src='../../images/dongyun.png' class='dongyun3'></image>
+  <image src='../../images/dongyun.png' class='dongyun4'></image>
+  <image src='../../images/dongyun.png' class='dongyun5'></image>
+
+
+  <!-- 动画提示框 -->
+  <view class='parbox' wx:if="{{showscrollMsg}}">
+    <view class='ani'>{{scrollData}}</view>
+  </view>
+  <image src='../../images/self_bg.png' class='index_bg'></image>
+  <!-- 喂食的提示框 -->
+  <i-modal title="温馨提示" visible="{{ show5 }}" bind:ok="onClose5" show-cancel="{{false}}" ok-text="知道了">
+    <image src='../../images/eating.png' class='eating'></image>
+    <view class='fontcolor'>小鸡今天吃的太饱了，明天再来吧</view>
+  </i-modal>
+  <i-modal title="恭喜" visible="{{ show6 }}" bind:ok="onClose6" show-cancel="{{false}}" ok-text="知道了">
+    <image src='../../images/getfeedimg.png' class='eating'></image>
+    <view class='fontcolor'>恭喜获得{{getWeight}}g粮食</view>
+  </i-modal>
+  <view class='shequn'>
+    <van-popup show="{{ showshequn }}" bind:close="onClose7">
+      <view class='shequn_box'>
+        <view>添加客服微信 加入咕咕社群 及时获取更多活动 </view>
+        <image src='../../images/erweima.png'></image>
+        <view class='aaaa'>扫码/复制 客服微信号</view>
+        <view class='bbbb' bindtap="copy">点击复制 gugu_kefu</view>
+      </view>
+    </van-popup>
+  </view>
+  <view class='content'>
+    <view class='outside'>
+      <navigator url="../my_eggs/my_eggs" hover-class="none" style="height: 100rpx;">
+
+
+        <view class='top'>
+          <view class="circle">
+            <open-data type="userAvatarUrl" wx:if="{{isLogin}}"></open-data>
+            <image src="../../images/avatar.png" wx:else class='avatar'></image>
+          </view>
+          <view class='twoview'>
+            <image src='../../images/myegg.png'></image>
+            <text>{{userAgg}}个</text>
+          </view>
+        </view>
+      </navigator>
+
+      <!-- 设置open-type='switchTab'，navigator才能跳转到tabbar页面-->
+      <view class='itemflex'>
+        <!-- <navigator url= hover-class="none"> -->
+        <view class='mine' bindtap="getCorInfo">
+          <image src='../../images/in_01.png'></image>
+          <text class='textposi shadow1'>合养</text>
+        </view>
+        <!-- </navigator> -->
+        <view class='mine' bindtap="showPopup3" wx:if="{{showmovie==1}}">
+          <!-- 0显示，1不显示 -->
+          <image src='../../images/qun(1).png'></image>
+          <text class='textposi shadow2'>社群</text>
+        </view>
+        <button class='contact' open-type="contact">
+          <view class='mine'>
+            <image src='../../images/kefu.png'></image>
+            <text class='kefuposi shadow3'>客服</text>
+          </view>
+        </button>
+        <navigator url='../steps/steps' hover-class="none">
+          <view class='mine'>
+            <image src='../../images/in_02.png'></image>
+            <text class='textposi shadow4'>动态</text>
+          </view>
+        </navigator>
+
+
+        <navigator url='../activity/activity' hover-class="none">
+          <view class='mine'>
+            <image src='../../images/hongbao.png' class="hongbao"></image>
+          </view>
+        </navigator>
+
+      </view>
+    </view>
+
+    <view class='center_chicken'>
+      <!-- 蛋和进度条 -->
+      <view class='one'>
+        <image src='../../images/yun_bg.png' class='yun_bg'></image>
+        <image src='../../images/layegg.png' class='layegg'></image>
+        <image src='../../images/green_yun.png' class='green_yun'></image>
+        <!-- 进度条 -->
+        <view class="progress-item">
+          <i-progress percent="{{ already_input/500*100 }}" status="{{ status }}"></i-progress>
+          <text class='percent_text'>{{already_input}}g/500g</text>
+        </view>
+      </view>
+      <!-- 鸡 -->
+      <view class='chicks'>
+        <view class="proem" wx:if="{{showPoem}}">
+          <view>{{poem}}
+            <image src='../../images/in_sanjiao.png'></image>
+          </view>
+        </view>
+        <image src='http://ggapi.5jbb.com:8088/img/chicken.gif' class="chick {{flag?'clickClass':''}}" bindtap='clickAni' wx:if="{{showChicken1==1}}"></image>
+        <image src='http://ggapi.5jbb.com:8088/img/layegg.gif' class='chick' wx:elif="{{showChicken1==2}}"></image>
+        <image src='http://ggapi.5jbb.com:8088/img/chickex2.gif' class="chick {{flag?'clickClass':''}}" bindtap='clickAni' wx:else></image>
+
+      </view>
+
+
+      <!-- 倒计时 -->
+      <view class='time'>
+        <view class='box' wx:if='{{show_pen}}'>
+          <image src="../../images/watch.png" class='watch'></image>
+          <view>
+            <view class='posi'>
+              <van-count-down millisecond time="{{ time }}" format="mm:ss" bind:finish="finished" />
+            </view>
+          </view>
+        </view>
+        <!-- 饲养盆 -->
+        <view class='pen'>
+          <image src="../../images/feed.png" class='feed' wx:if='{{show_pen}}'></image>
+          <image src='../../images/basin.png' class='basin'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='two'>
+      <view bindtap="showPopup">
+        <image src="../../images/in_03.png"></image>
+        <text class='textposi shadow5'>排行</text>
+      </view>
+      <view bindtap="showPopup2">
+        <van-tag round type="danger">可领取</van-tag>
+        <image src="../../images/in_05.png"></image>
+        <text class='textposi shadow6'>领饲料</text>
+      </view>
+      <view>
+        <image src=""></image>
+        <text></text>
+      </view>
+      <view class='last' bindtap="feedChick" wx:if='{{showfeed}}'>
+        <image src="../../images/in_04.png"></image>
+        <text class='textposi shadow7'>{{food_number}}g</text>
+      </view>
+      <view class='last' bindtap="feedChick2" wx:else>
+        <image src="../../images/in_04.png"></image>
+        <text class='textposi shadow7'>{{food_number}}g</text>
+      </view>
+    </view>
+    <!-- 饲料领取项目 -->
+    <van-popup show="{{ show2 }}" position="bottom" custom-style="1500rpx" bind:close="onClose2">
+      <image src='../../images/inclose.png' class='in_close' bindtap="onClose2"></image>
+      <view class='friend_list'>
+        <view class='top_getfeed martop'>
+          <text>领粮食</text>
+          <image src='../../images/getfeed2.png'></image>
+        </view>
+        <scroll-view scroll-y='true' class='thisheight2'>
+          <view class='getway'>
+            <image src='../../images/way1.png'></image>
+            <view class='fir_view'>
+              <text class='aa'>每日签到</text>
+              <text class='bb'>每天可以签到一次，赠送20g粮食</text>
+            </view>
+            <view class='btn_bg btnstyle' wx:if="{{isSign}}">明日再来</view>
+            <view bindtap="clickSign" class='btnstyle' wx:else>签到</view>
+          </view>
+
+          <view class='getway bg2'>
+            <image src='../../images/way2.png'></image>
+            <view class='fir_view'>
+              <text class='aa'>邀请好友</text>
+              <text class='bb'>每邀请一位新用户好友即可赠送您100g粮食</text>
+            </view>
+            <van-button type="default" open-type="share">
+              <text bindtap='onShareAppMessage'>邀请</text>
+            </van-button>
+          </view>
+          <!-- 每日问候 -->
+          <view class='getway bg5'>
+            <image src='../../images/meiriwenhou.png'></image>
+            <view class='fir_view'>
+              <text class='aa'>每日问候</text>
+              <text class='bb'>带小鸡传话给好友，赠送您10g粮食 ({{shareDaily}}/3)</text>
+            </view>
+            <van-button type="default" open-type="share" bindtap='shareDaily' wx:if='{{isShareDaily==1}}'>
+              <text>领取</text>
+            </van-button>
+            <view class='btnstyle btn_bg daojishi' wx:elif="{{isShareDaily==2}}">
+              <van-count-down millisecond time="{{ time3 }}" format="mm:ss" bind:finish="finished3" />
+            </view>
+            <view class='btn_bg btnstyle' wx:else>明日再来</view>
+          </view>
+          <!-- 限时打卡 -->
+          <view class='getway bg6'>
+            <image src='../../images/limittime.png'></image>
+            <view class='fir_view'>
+              <text class='aa'>限时打卡</text>
+              <text class='bb'>每天8~10, 12~14, 18~20点访问，分别赠送20g粮食</text>
+            </view>
+            <van-button type="default" bindtap='limitTime' wx:if='{{isxsdk}}'>
+              <text>领取</text>
+            </van-button>
+
+            <view class='btn_bg btnstyle' wx:else>下次再来</view>
+          </view>
+          <!-- 观看广告 -->
+          <view class='getway bg3'>
+            <image src='../../images/way3.png'></image>
+            <view class='fir_view'>
+             
+              <text class='aa'>观看广告</text>
+              <!-- <text class='bb'>完整观看视频广告可以获得50g粮食（{{advideoNum}}/3）</text> -->
+                <text class='bb'>完整观看视频广告可以获得50g粮食</text>
+            </view>
+          <view class='btn_bg btnstyle'>敬请期待</view>
+            <!-- <view class='btnstyle btncolor' bindtap="show_ad" wx:if="{{showvideobtn==1}}" id='1'>去观看</view> -->
+         
+            <!-- <view class='btnstyle btn_bg daojishi' wx:elif="{{showvideobtn==2}}">
+              <van-count-down time="{{ time2 }}" format="mm:ss" bind:finish="finished2" />
+            </view>
+            <view class='btn_bg btnstyle' wx:else>明日再来</view> -->
+          </view>
+          <view class='getway bg4'>
+            <image src='../../images/way4.png'></image>
+            <view class='fir_view'>
+              <text class='aa'>授权登录</text>
+              <text class='bb'>为了更好地服务，您授权登录后可以赠送您500g粮食</text>
+            </view>
+            <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo3" wx:if="{{is_get}}">
+              <view>去授权</view>
+            </button>
+            <view class='btnstyle btn_bg' wx:else>已授权</view>
+          </view>
+        </scroll-view>
+      </view>
+    </van-popup>
+    <!-- 邀请好友列表 -->
+    <van-popup show="{{ show }}" position="bottom" custom-style="height: 930rpx" bind:close="onClose">
+      <image src='../../images/inclose.png' class='in_close' bindtap="onClose"></image>
+      <view class='friends'>
+        <view class='top_getfeed paddingtopleft'>
+          <text>好友排行</text>
+          <image src='../../images/friends(1).png'></image>
+        </view>
+        <view class='cc'>
+          <view class='invi_f'>
+            <text>邀请好友得红包</text>
+            <image src='../../images/hongbao.png' class='friend_hongabo'></image>
+          </view>
+          <button open-type="share">
+            <text bindtap='onShareAppMessage'>邀请好友</text>
+          </button>
+        </view>
+        <i-tabs current="{{ current }}" bindchange="handleChangeScroll">
+          <i-tab key="tab1" title="鸡蛋总数">
+          </i-tab>
+          <i-tab key="tab2" title="领取排行">
+          </i-tab>
+        </i-tabs>
+
+        <view wx:if='{{showAggAll}}'>
+          <scroll-view scroll-y='true' class='thisheight' wx:if='{{showFriendScroll}}'>
+            <view class='thisfriend' wx:for='{{friendsNum}}' wx:key="index">
+              <view class='padding'>
+                <view>
+                  <text class='ee'>{{index+1}}</text>
+                  <image src="{{item.user.headAddress}}"></image>
+                  <text class='ff'>{{item.user.nickName}}</text>
+                </view>
+                <view class='gg'>
+                  <image src='../../images/myegg.png'></image>
+                  <text> x {{item.getAgg}} </text>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+          <view class='friendremind' wx:else>{{friendremain}}</view>
+        </view>
+        <view wx:else>
+          <scroll-view scroll-y='true' class='thisheight' wx:if='{{showFriendScroll}}'>
+            <view class='thisfriend' wx:for='{{friends}}' wx:key="index">
+              <view class='padding'>
+                <view>
+                  <text class='ee'>{{index+1}}</text>
+                  <image src="{{item.user.headAddress}}"></image>
+                  <text class='ff'>{{item.user.nickName}}</text>
+                </view>
+                <view class='gg'>
+                  <image src='../../images/myegg.png'></image>
+                  <text> x {{item.eggTotal}} </text>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+          <view class='friendremind' wx:else>{{friendremain}}</view>
+        </view>
+
+
+      </view>
+    </van-popup>
+    <van-dialog use-slot title="温馨提示" show="{{ show3 }}" confirm-button-open-type="getUserInfo2" bind:close="onClose3" bind:confirm='indexConfirm'>
+      <view class='remain_text'>
+        <view>1.通过左下角领粮食按钮完成不同的任务可以领取粮食 </view>
+        <view>2.邀请好友也可以获得粮食奖励</view>
+        <view> 3.通过喂养小鸡获得的鸡蛋可以在个人中心兑换</view>
+      </view>
+    </van-dialog>
+    <van-dialog use-slot title="温馨提示" show="{{ showcorRemain }}" bind:close="onClosecor" bind:confirm='indexConfirmCor' confirm-button-text='去创建' confirm-button-color="#59BB6D" show-cancel-button>
+      <view class='remain_text'>
+        <view>1.您可以要请家人或朋友一起合养，可以更快速的完成喂养目标。 </view>
+        <view>2.最终收益共同放入发起人的账户。</view>
+        <view> 3.发起人退出合养则解散该合养。</view>
+      </view>
+    </van-dialog>
+
+
+    <van-dialog use-slot title="邀请合养" show="{{ showcorRemain2 }}" bind:close="onClosecor2" bind:confirm='indexConfirmCor2' confirm-button-text='加入合养' confirm-button-color="#59BB6D" show-cancel-button>
+      <view class='remain_text'>
+        <view>您的好友
+          <text class='colorname'>{{corName}}</text>邀请你一起合养小鸡，加入后你们可以一起喂养小鸡，能够更快的完成喂养目标，合养成果归
+          <text class='colorname'>{{corName}}</text>所有。 </view>
+
+      </view>
+    </van-dialog>
+
+<!-- 签到提醒弹框 -->
+     <van-dialog use-slot title="温馨提示" show="{{ isSignshow }}" bind:cancel="onClosecSign"  bind:confirm='signToAd'  confirm-button-text='确定' confirm-button-color="#59BB6D" show-cancel-button>
+      <view class='remain_text2'>
+        <view>是否观看视频广告获取3倍粮食奖励？ </view>
+      </view>
+    </van-dialog>
+  </view>
+
+
+
+  <!-- </view> -->
+</view>

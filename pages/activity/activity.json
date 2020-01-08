@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+      "i-progress": "../../dist/progress2/index",
+    "van-popup": "../../dist2/popup/index"
+  }
+}

@@ -1,0 +1,32 @@
+
+.section {
+  height: 110rpx;
+  font-size: 14px;
+  border-bottom: 2rpx solid #f0f0f0;
+  color: #495060;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0 20rpx 0 40rpx;
+}
+.list{
+  height: 92rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  border-bottom: 2rpx solid #F0F0F0;
+}
+.list text,.section__title{
+  display: inline-block;
+  width: 140rpx;
+  font-weight: 600!important;
+  color: #000;
+  font-size: 28rpx;
+
+}
+.list input{
+  text-align: right
+}

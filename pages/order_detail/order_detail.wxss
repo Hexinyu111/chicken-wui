@@ -1,0 +1,61 @@
+.detail {
+  background: #fff;
+}
+
+.top {
+  height: 74rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.goodslist {
+  height: 160rpx;
+  background: #fff;
+  display: flex;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.goodslist image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.fontcolor {
+  color: #000;
+  padding-bottom: 40rpx;
+}
+
+.wid {
+  width: 80%;
+}
+
+.wid view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lastview {
+  color: #999;
+}
+
+.bottom {
+  padding: 30rpx 0 30rpx 40rpx;
+  color: #999999;
+}
+.marbot{
+  padding-bottom: 20rpx;
+}
+.yellow{
+  color: #ED8900;
+  font-weight: bolder
+}
+.green{
+  color: #119535;
+   font-weight: bolder
+}

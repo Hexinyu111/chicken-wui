@@ -1,0 +1,7 @@
+@import '../common/index.wxss';
+
+.van-count-down {
+  color: #fff;
+  font-size: 20rpx;
+  line-height: 26rpx;
+}

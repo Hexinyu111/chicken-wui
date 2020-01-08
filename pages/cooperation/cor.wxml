@@ -1,0 +1,230 @@
+<!--index.wxml-->
+<!-- <import src="../template/tabbar.wxml" /> -->
+<view class='back_box' style="top:{{navTop}}px;">
+  <image src='../../images/ac_return.png' class='back' bindtap="back"></image>
+  <text>小鸡合养</text>
+</view>
+
+<!-- 邀请合养的弹框 -->
+<!-- <van-dialog use-slot title='温馨提示' show="{{ corNum }}" confirm-button-color='#59BB6D' showConfirmButton="{{false}}"> -->
+  <!-- <view class='remain_text'> -->
+    <!-- <view class='remain_title'>邀请好友和您一起合养吧</view> -->
+    <!-- <view class='itemflex itemflex2' wx:if="{{showInviteCor==1}}">
+      <view class='mine'>
+        <view>
+          <image src='{{selfImg}}'></image>
+        </view>
+        <view class='textposi shadow1 thisposi'>{{selfNickName}}</view>
+      </view>
+      <view class='mine2'>
+        <image src='../../images/cor_invit.png'></image>
+      </view>
+      <view class='mine2'>
+        <image src='../../images/cor_invit.png'></image>
+      </view>
+    </view> -->
+    <!-- <view class='itemflex itemflex2' wx:elif="{{showInviteCor==2}}">
+      <view class='mine'>
+        <view>
+          <image src='{{selfImg}}'></image>
+        </view>
+        <view class='textposi shadow1 thisposi'>{{selfNickName}}</view>
+      </view>
+
+      <view class='mine'>
+        <view>
+          <image src='{{corList[0].headrImg}}'></image>
+        </view>
+        <view class='textposi shadow1 thisposi'>{{corList[0].nikeName}}</view>
+      </view>
+      <view class='mine2'>
+        <image src='../../images/cor_invit.png'></image>
+      </view>
+    </view> -->
+    <!-- <view class='itemflex itemflex2' wx:elif="{{showInviteCor==3}}">
+      <view class='mine'>
+        <view>
+          <image src='{{selfImg}}'></image>
+        </view>
+        <view class='textposi shadow1 thisposi'>{{selfNickName}}</view>
+      </view>
+
+      <view class='mine'>
+        <view>
+          <image src='{{corList[0].headrImg}}'></image>
+        </view>
+        <view class='textposi shadow1 thisposi'>{{corList[0].nikeName}}</view>
+      </view>
+      <view class='mine'>
+        <view>
+          <image src='{{corList[0].headrImg}}'></image>
+        </view>
+        <view class='textposi shadow1 thisposi'>{{corList[1].nikeName}}</view>
+      </view>
+    </view> -->
+  <!-- </view> -->
+  <!-- <button class='invite' bindtap='onShareAppMessage' open-type='share' wx:if="{{isCreateCor}}">邀请合养</button> -->
+  <!-- <button class='invite' wx:else>组队创建中……</button> -->
+<!-- </van-dialog> -->
+<view class="container">
+  <van-notify id="van-notify" />
+  <van-toast id="van-toast" />
+  <!-- 云 -->
+  <image src='../../images/dongyun.png' class='dongyun1'></image>
+  <image src='../../images/dongyun.png' class='dongyun2'></image>
+  <image src='../../images/dongyun.png' class='dongyun3'></image>
+  <image src='../../images/dongyun.png' class='dongyun4'></image>
+  <image src='../../images/dongyun.png' class='dongyun5'></image>
+
+  <!-- 动画提示框 -->
+  <view class='parbox' wx:if="{{showscrollMsg}}">
+    <view class='ani'>{{scrollData}}</view>
+  </view>
+  <image src='../../images/hybg.png' class='index_bg'></image>
+  <!-- 喂食的提示框 -->
+  <i-modal title="温馨提示" visible="{{ show5 }}" bind:ok="onClose5" show-cancel="{{false}}" ok-text="知道了">
+    <image src='../../images/eating.png' class='eating'></image>
+    <view class='fontcolor'>当天只能喂七次哦</view>
+  </i-modal>
+  <i-modal title="恭喜" visible="{{ show6 }}" bind:ok="onClose6" show-cancel="{{false}}" ok-text="知道了">
+    <image src='../../images/getfeedimg.png' class='eating'></image>
+    <view class='fontcolor'>恭喜获得{{getWeight}}g粮食</view>
+  </i-modal>
+
+  <view class='content'>
+    <view class='outside'>
+      <!-- <navigator url="../my_eggs/my_eggs" hover-class="none" style="z-index: 999999999"> -->
+
+      <view class='top'>
+        <view class="circle">
+          <image src="{{creatCorImg2}}" class='avatar'></image>
+        </view>
+        <view class='twoview'>
+          <image src='../../images/myegg.png'></image>
+          <text>{{userAgg}}个</text>
+        </view>
+      </view>
+      <!-- </navigator> -->
+
+      <!-- 设置open-type='switchTab'，navigator才能跳转到tabbar页面-->
+      <view class='itemflex'>
+        <!-- 当前用户 -->
+        <view class='mine'>
+          <image src='{{selfImg}}'></image>
+          <text class='textposi shadow1'>{{putfeed>999?putfeed/1000+'kg':putfeed+'g'}}</text>
+        </view>
+
+        <view class='mine' wx:for="{{corList}}" wx:key="{{index}}">
+          <image src='{{item.headrImg}}'></image>
+          <text class='textposi shadow2'>{{item.putFeed>999?item.putFeed/1000+'kg':item.putFeed+'g'}}</text>
+        </view>
+
+
+        <!-- 邀请 -->
+        <button class='contact' open-type="share" wx:if="{{isCreateCor}}">
+          <image src='../../images/cor_yaoqing.png' bindtap='onShareAppMessage'></image>
+        </button>
+
+
+        <navigator url='../cor_set/cor_set' hover-class="none">
+          <image src='../../images/sandian.png' class='sandian'></image>
+        </navigator>
+
+      </view>
+    </view>
+
+    <view class='center_chicken'>
+      <!-- 蛋和进度条 -->
+      <view class='one'>
+        <image src='../../images/yun_bg.png' class='yun_bg'></image>
+        <image src='../../images/layegg.png' class='layegg'></image>
+        <image src='../../images/green_yun.png' class='green_yun'></image>
+        <!-- 进度条 -->
+        <view class="progress-item">
+          <i-progress percent="{{ already_input/500*100 }}" status="{{ status }}"></i-progress>
+          <text class='percent_text'>{{already_input}}g/500g</text>
+        </view>
+      </view>
+      <!-- 鸡 -->
+      <view class='chicks'>
+        <view class="proem" wx:if="{{showPoem}}">
+          <view>{{poem}}
+            <image src='../../images/in_sanjiao.png'></image>
+          </view>
+        </view>
+        <image src='http://ggapi.5jbb.com:8088/img/chicken.gif' class="chick {{flag?'clickClass':''}}" bindtap='clickAni' wx:if="{{showChicken1==1}}"></image>
+        <image src='http://ggapi.5jbb.com:8088/img/layegg.gif' class='chick' wx:elif="{{showChicken1==2}}"></image>
+        <image src='http://ggapi.5jbb.com:8088/img/chickex2.gif' class="chick {{flag?'clickClass':''}}" bindtap='clickAni' wx:else></image>
+
+      </view>
+
+
+      <!-- 倒计时 -->
+      <view class='time'>
+        <view class='box' wx:if='{{show_pen}}'>
+          <image src="../../images/watch.png" class='watch'></image>
+          <view>
+            <view class='posi'>
+              <van-count-down millisecond time="{{ time }}" format="mm:ss" bind:finish="finished" />
+            </view>
+          </view>
+        </view>
+        <!-- 饲养盆 -->
+        <view class='pen'>
+          <image src="../../images/feed.png" class='feed' wx:if='{{show_pen}}'></image>
+          <image src='../../images/basin.png' class='basin'></image>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='two'>
+      <view>
+        <image src=""></image>
+        <text></text>
+      </view>
+      <view>
+        <image src=""></image>
+        <text></text>
+      </view>
+      <view>
+        <image src=""></image>
+        <text></text>
+      </view>
+      <view class='last' bindtap="feedChick" wx:if='{{showfeed}}'>
+        <image src="../../images/in_04.png"></image>
+        <text class='textposi shadow7'>{{food_number}}g</text>
+      </view>
+      <view class='last' bindtap="feedChick2" wx:else>
+        <image src="../../images/in_04.png"></image>
+        <text class='textposi shadow7'>{{food_number}}g</text>
+      </view>
+    </view>
+
+    <van-dialog use-slot title="温馨提示" show="{{ show3 }}" confirm-button-open-type="getUserInfo2" bind:close="onClose3" bind:confirm='indexConfirm'>
+      <view class='remain_text'>
+        <view>1.通过左下角领粮食按钮完成不同的任务可以领取粮食 </view>
+        <view>2.邀请好友也可以获得粮食奖励</view>
+        <view> 3.通过喂养小鸡获得的鸡蛋可以在个人中心兑换</view>
+      </view>
+    </van-dialog>
+
+
+
+
+
+
+  </view>
+  <swiper class='scrollInfo' autoplay vertical duration='1000' interval='2500' circular bindchange='animationfinish' display-multiple-items='2'>
+    <swiper-item wx:for='{{scrollinfo}}' wx:key="{{index}}">
+      <view class="scrollInfo_item {{scrollinfoOpac==index?'opac':''}} ">
+        <view>
+          <text class='fontweight'>  {{item.userId}}</text>
+          <text>{{item.url}}</text>
+        </view>
+        <view>{{item.number}}</view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>

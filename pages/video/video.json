@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText":"休闲娱乐",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-count-down": "../../dist2/count-down/index",
+    "van-tab": "../../dist2/tab/index",
+    "van-tabs": "../../dist2/tabs/index"
+  }
+  
+}

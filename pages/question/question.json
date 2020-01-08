@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的帮助中心",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "light",
+ "usingComponents": {
+ 
+  "van-collapse": "../../dist2/collapse/index",
+  "van-collapse-item": "../../dist2/collapse-item/index"
+}
+}
